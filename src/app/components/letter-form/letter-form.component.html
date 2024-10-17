@@ -1,0 +1,103 @@
+<form [formGroup] = "formContol" (ngSubmit)="submitForm()">
+    <div class="box bg-red">
+        <p class="pform">Напиши нам</p>
+    </div>
+    <div>
+        <label for="name">Ваше имя:</label> 
+         
+        <input 
+            [ngClass]="{
+                'border-black':flagName,
+                'border-red':!flagName
+            }"
+            type="text"
+            id="name" 
+            name="name" 
+            formControlName="name"
+            
+       >
+       <i class="icon">👤</i>  
+    </div>
+    <div>
+        <label for="email">Ваш Email:</label>
+        <input 
+            [ngClass]="{
+                'border-black':flagEmail,
+                'border-red':!flagEmail
+            }"
+            type="email" 
+            id="email" 
+            name="email" 
+            formControlName="email">
+            <i class="icon">✉️</i>  
+    </div>
+    <div>
+        <label for="telephone">Ваш телефон:</label>
+        
+        <input
+            [ngClass]="{
+                'border-black':flagTelephone,
+                'border-red':!flagTelephone
+            }"
+            mask="0(000)000-00-00" 
+            id="telephone" 
+            name="telephone" 
+            formControlName="telephone">
+            <i class="icon">📞</i>  
+        <!-- <span class="icon"><i class="fas fa-search"></i></span> -->
+    </div>
+    <div>
+        <label for="theme">Тема:</label>
+        <select 
+            [ngClass]="{
+                'border-black':flagTheme,
+                'border-red':!flagTheme
+            }"
+            id="theme" 
+            name="theme" 
+            class="selectTheme" 
+            formControlName="theme">
+            <option value="" disabled selected hidden>Выберите вариант...</option>
+            <option *ngFor="let el of itemsSelect" [value]="el.value">{{el.value}}</option>
+           
+        </select>
+    </div>
+    <div >
+        <label for="message">Ваше сообщение:</label>
+        
+        <textarea 
+            [ngClass]="{
+                'border-black':flagMessage,
+                'border-red':!flagMessage
+            }"
+            id="message" 
+            name="message" 
+            rows="5" 
+            cols="30" 
+            class="textArea"
+            pInputTextarea 
+            formControlName="message"
+            ></textarea>
+    </div>
+    <div>
+        <label for="captcha">Цифры:</label>
+        <div>
+          <input 
+            [ngClass]="{
+                'border-black':flagCaptcha,
+                'border-red':!flagCaptcha
+                }"
+            type="number" 
+            id="captcha" 
+            name="captcha" 
+            class="inputCaptcha" 
+            maxlength="5" 
+            formControlName="captcha">
+          <!-- <img src="captcha_image.png" alt="Captcha Image"> -->
+           <div class="captcha">{{valueCaptcha}}</div>
+        </div>
+    </div>
+    <div class="center">
+        <button type="submit">Отправить письмо!</button>
+    </div>
+  </form>

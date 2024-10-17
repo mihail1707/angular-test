@@ -1,0 +1,14 @@
+<div 
+    *ngIf="messageService.message$|async as error" 
+    [ngClass]="{
+        'bgSuccess': messageService.getFlag,
+        'bgError': !messageService.getFlag
+    }"
+    class="container">
+    {{error}}
+    <!-- {{errorService.error$|async}} -->
+    <button 
+        class="btnClose"
+        (click)="messageService.clear()"
+    >&times;</button>
+</div>

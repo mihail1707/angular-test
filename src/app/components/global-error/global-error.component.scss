@@ -1,0 +1,21 @@
+.btnClose{
+    position: absolute;
+    top: 0;
+    right: 5px;
+    color: black;
+}
+.container{
+    position: relative;
+    // background-color: red;
+    color: white;
+    height: 60px;         
+    display: flex;        
+    justify-content: center; 
+    align-items: center;
+}
+.bgError{
+    background-color: red;
+}
+.bgSuccess{
+    background-color: green;
+}

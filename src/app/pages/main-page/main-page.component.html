@@ -1,0 +1,11 @@
+<app-modal-window *ngIf="modalService.isVisible$ | async">
+    <app-letter-form></app-letter-form>
+</app-modal-window>
+<!-- <div class="table-container"> -->
+    <app-table-letters-users></app-table-letters-users>
+<!-- </div> -->
+
+<button
+    class="btn-round"
+    (click)="modalService.open()"
+>+</button>
